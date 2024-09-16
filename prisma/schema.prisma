@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Catalogo {
-  id      Int      @id @default(autoincrement())
+  id      String      @id @default(cuid())
   titulo   String   
   ano    String
   lancamento   String

@@ -1,9 +1,9 @@
 export interface Filme {
-    id:string
-    titulo:String   
-    ano:String
-    lancamento:String
-    genero:String
-    diretor:String
+    id:number
+    titulo:string   
+    ano:string
+    lancamento:string
+    genero:string
+    diretor:string
   }
   
