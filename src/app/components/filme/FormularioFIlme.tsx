@@ -1,6 +1,7 @@
 import { Filme } from "@/core/model/Filme";
 import InputTexto from "../shared/InputTexto";
 
+
 export interface FormularioUsuarioProps{
 filme: Partial<Filme>
 onChange: (filme:Partial<Filme>) => void
@@ -12,19 +13,35 @@ excluir:() => void
 export default function FormularioFilme(props: FormularioUsuarioProps){
 return(
     <div className="flex flex-col gap-5">
-        <InputTexto label="nome" value={props.filme.titulo} 
+        <InputTexto label="Nome" value={props.filme.titulo} 
         onChange={ e => props.onChange?.({...props.filme, titulo: e.target.value})} />
 
-        <InputTexto label="genero" value={props.filme.genero}
-        onChange={ e => props.onChange?.({...props.filme, genero: e.target.value})} />
+        {/* <SelectTexto label="nome" value={props.filme.genero} 
+        onChange={ e => props.onChange?.({...props.filme, genero: e.target.value})} 
+        /> */}
 
-        <InputTexto label="diretor" value={props.filme.diretor} 
+
+
+
+<div className="flex flex-col gap-1">
+        <label className="flex flex-col gap-1">Genero</label>
+        <select className="bg-zinc-800 p-2 rounded-md outline-none" name="genero" value={props.filme.genero}
+        onChange={ e => props.onChange?.({...props.filme, genero: e.target.value})} >
+            <option value="Ação">Ação</option>
+            <option value="Ação">Aventura</option>
+            <option value="Drama">Drama</option>
+            <option value="Terror">Terror</option>
+            <option value="Comedia">Comedia</option>
+        </select>
+        </div>
+
+        <InputTexto label="Diretor" value={props.filme.diretor} 
         onChange={ e => props.onChange?.({...props.filme, diretor: e.target.value})} />
 
-        <InputTexto label="ano" value={props.filme.ano} 
+        <InputTexto label="Ano" value={props.filme.ano} 
         onChange={ e => props.onChange?.({...props.filme, ano: e.target.value})} />
 
-        <InputTexto label="lancamento" value={props.filme.lancamento}
+        <InputTexto label="Lancamento" value={props.filme.lancamento}
         onChange={ e => props.onChange?.({...props.filme, lancamento: e.target.value})} />
 
 <div className="flex justify-between">
