@@ -15,6 +15,7 @@ export default function Page() {
 
     useEffect(() => {
         Backend.filmes.obter().then(setFilmes)
+
     },[])
 
     async function salvar() {
